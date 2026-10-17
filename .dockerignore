@@ -1,0 +1,14 @@
+.git/
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+saved_models/
+node_modules/
+.DS_Store
+docker-compose*.yml
+Dockerfile
+.resolved_configs/

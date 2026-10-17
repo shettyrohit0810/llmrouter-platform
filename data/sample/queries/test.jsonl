@@ -1,0 +1,33 @@
+{"task_name": "math", "query": "A bag holds 14 red and 21 blue marbles. Derive the probability of drawing exactly two red in three draws without replacement."}
+{"task_name": "code", "query": "How do I print 'harbor' in Python?"}
+{"task_name": "math", "query": "Solve 6x^2 + 39x - 6 = 0 and justify each algebraic step, including the discriminant."}
+{"task_name": "code", "query": "Implement an LRU cache with O(1) get and put for capacity 40 in Python and analyse its complexity."}
+{"task_name": "math", "query": "Prove that the sum of the first 33 odd numbers is a perfect square, using induction."}
+{"task_name": "code", "query": "What does len('lantern') return in Python?"}
+{"task_name": "code", "query": "Design a thread-safe rate limiter for 22 requests per second and explain the race conditions you avoid."}
+{"task_name": "code", "query": "Design a thread-safe rate limiter for 9 requests per second and explain the race conditions you avoid."}
+{"task_name": "code", "query": "Implement an LRU cache with O(1) get and put for capacity 27 in Python and analyse its complexity."}
+{"task_name": "code", "query": "Design a thread-safe rate limiter for 5 requests per second and explain the race conditions you avoid."}
+{"task_name": "code", "query": "How do I print 'orbit' in Python?"}
+{"task_name": "math", "query": "Round 28.30 to the nearest whole number."}
+{"task_name": "code", "query": "Implement an LRU cache with O(1) get and put for capacity 37 in Python and analyse its complexity."}
+{"task_name": "code", "query": "Design a thread-safe rate limiter for 21 requests per second and explain the race conditions you avoid."}
+{"task_name": "code", "query": "How do I print 'lantern' in Python?"}
+{"task_name": "math", "query": "What is 34 plus 33?"}
+{"task_name": "code", "query": "Design a thread-safe rate limiter for 29 requests per second and explain the race conditions you avoid."}
+{"task_name": "math", "query": "What is 23 plus 37?"}
+{"task_name": "code", "query": "How do I print 'meadow' in Python?"}
+{"task_name": "math", "query": "Prove that the sum of the first 19 odd numbers is a perfect square, using induction."}
+{"task_name": "math", "query": "What is 17 times 26?"}
+{"task_name": "math", "query": "Solve 27x^2 + 35x - 27 = 0 and justify each algebraic step, including the discriminant."}
+{"task_name": "math", "query": "What is 11 plus 11?"}
+{"task_name": "math", "query": "A bag holds 4 red and 2 blue marbles. Derive the probability of drawing exactly two red in three draws without replacement."}
+{"task_name": "math", "query": "What is 21 plus 35?"}
+{"task_name": "code", "query": "Design a thread-safe rate limiter for 17 requests per second and explain the race conditions you avoid."}
+{"task_name": "math", "query": "What is 21 times 5?"}
+{"task_name": "qa", "query": "Evaluate the trade-offs between nuclear and solar power for a country like Chile over a thirty-year horizon."}
+{"task_name": "code", "query": "Implement an LRU cache with O(1) get and put for capacity 33 in Python and analyse its complexity."}
+{"task_name": "qa", "query": "Explain how Chile's political history shaped its present trade policy, citing at least three events."}
+{"task_name": "code", "query": "Write a Python expression that reverses the string 'pylon'."}
+{"task_name": "math", "query": "What is 40 plus 11?"}
+{"task_name": "math", "query": "What is 30 times 22?"}

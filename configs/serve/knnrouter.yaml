@@ -1,0 +1,28 @@
+# knnrouter (serve) -- paths are relative to the platform root and are made
+# absolute at use time by backend/api/services/config_resolver.py.
+data_path:
+  query_data_train: data/sample/queries/train.jsonl
+  query_data_test: data/sample/queries/test.jsonl
+  query_embedding_data: data/sample/routing/query_embeddings.pt
+  routing_data_train: data/sample/routing/train.jsonl
+  routing_data_test: data/sample/routing/test.jsonl
+  llm_data: data/sample/llm_candidates.json
+
+model_path:
+  load_model_path: 'saved_models/knnrouter/knnrouter.pkl'
+
+metric:
+  weights:
+    performance: 1
+    cost: 0
+    llm_judge: 0
+
+hparam:
+  n_neighbors: 5
+  weights: uniform
+  algorithm: auto
+  leaf_size: 30
+  p: 2
+  metric: minkowski
+  n_jobs: 1
+

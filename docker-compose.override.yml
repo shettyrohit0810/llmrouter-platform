@@ -1,0 +1,16 @@
+# Auto-applied by `docker compose` alongside docker-compose.yml for local
+# development: mounts source for live-reload instead of relying on the
+# baked-in COPY layers, and enables uvicorn --reload.
+services:
+  backend:
+    volumes:
+      - ./backend:/app/backend
+      - ./configs:/app/configs
+    environment:
+      BACKEND_LOG_LEVEL: "debug"
+    # `command` is replaced wholesale (not merged) by Compose when both this
+    # file and docker-compose.yml set it -- the migration step must be
+    # repeated here explicitly, or dev mode silently skips `alembic upgrade
+    # head` (caught during Milestone 1 verification: /health passed with SELECT
+    # 1 even though no migration had actually run).
+    command: ["sh", "-c", "alembic upgrade head && uvicorn backend.app:app --host 0.0.0.0 --port 8080 --reload"]

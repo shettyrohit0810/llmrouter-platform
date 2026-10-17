@@ -1,0 +1,109 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER:-llmrouter}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-llmrouter_dev_password}"
+      POSTGRES_DB: "${POSTGRES_DB:-llmrouter}"
+    ports:
+      - "${POSTGRES_HOST_PORT:-5434}:5432"
+    volumes:
+      - llmrouter_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-llmrouter}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "${REDIS_HOST_PORT:-6380}:6379"
+    volumes:
+      - llmrouter_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: llmrouter-backend:latest
+    # Run pending migrations before the server starts -- the modular-monolith
+    # equivalent of a migration init-container, without adding a second
+    # deployable. Dockerfile's own CMD (bare uvicorn) is unaffected for
+    # `docker run` usage against an already-migrated database.
+    command: ["sh", "-c", "alembic upgrade head && uvicorn backend.app:app --host 0.0.0.0 --port 8080"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "${BACKEND_HOST_PORT:-8080}:8080"
+    volumes:
+      # Trained router checkpoints: written by workers, read by the API for
+      # inference, so both containers must see the same files.
+      - llmrouter_saved_models:/app/saved_models
+    environment:
+      BACKEND_HOST: "0.0.0.0"
+      BACKEND_PORT: "8080"
+      BACKEND_LOG_LEVEL: "info"
+      BACKEND_GATEWAY_CONFIG: "configs/gateway.yaml"
+      DATABASE_URL: "postgresql+psycopg2://${POSTGRES_USER:-llmrouter}:${POSTGRES_PASSWORD:-llmrouter_dev_password}@postgres:5432/${POSTGRES_DB:-llmrouter}"
+      REDIS_URL: "redis://redis:6379/0"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  # Job queue worker: same image as the backend, different entrypoint. Scale
+  # with `docker compose up -d --scale worker=N`. Waits for the backend to be
+  # healthy so migrations have already been applied (workers never migrate).
+  worker:
+    image: llmrouter-backend:latest
+    command: ["python", "-m", "backend.worker.main"]
+    volumes:
+      - llmrouter_saved_models:/app/saved_models
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      BACKEND_LOG_LEVEL: "info"
+      BACKEND_GATEWAY_CONFIG: "configs/gateway.yaml"
+      DATABASE_URL: "postgresql+psycopg2://${POSTGRES_USER:-llmrouter}:${POSTGRES_PASSWORD:-llmrouter_dev_password}@postgres:5432/${POSTGRES_DB:-llmrouter}"
+      WORKER_LEASE_SECONDS: "${WORKER_LEASE_SECONDS:-120}"
+      WORKER_HEARTBEAT_SECONDS: "${WORKER_HEARTBEAT_SECONDS:-30}"
+      WORKER_POLL_INTERVAL_SECONDS: "${WORKER_POLL_INTERVAL_SECONDS:-1}"
+      WORKER_MAX_RETRIES: "${WORKER_MAX_RETRIES:-3}"
+      # Cap PyTorch threads per worker (about cores / workers); empty = PyTorch default.
+      WORKER_TORCH_THREADS: "${WORKER_TORCH_THREADS:-}"
+    restart: unless-stopped
+
+  dashboard:
+    build:
+      context: ./dashboard
+      args:
+        # Address the browser uses to reach the API (baked into the bundle).
+        NEXT_PUBLIC_API_URL: "${PUBLIC_API_URL:-http://localhost:8080}"
+    ports:
+      - "${DASHBOARD_HOST_PORT:-3000}:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  llmrouter_saved_models:
+  llmrouter_postgres_data:
+  llmrouter_redis_data:

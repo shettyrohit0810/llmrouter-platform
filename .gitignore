@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+saved_models/
+*.pkl
+.env
+node_modules/
+.resolved_configs/
+data/sample/routing/*.csv

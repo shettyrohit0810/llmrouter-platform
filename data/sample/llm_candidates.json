@@ -1,0 +1,29 @@
+{
+  "small-model": {
+    "size": "7B",
+    "feature": "Synthetic small-model used only by the sample dataset.",
+    "input_price": 0.1,
+    "output_price": 0.1,
+    "model": "small-model",
+    "service": "sample",
+    "api_endpoint": "http://localhost:11434/v1"
+  },
+  "mid-model": {
+    "size": "34B",
+    "feature": "Synthetic mid-model used only by the sample dataset.",
+    "input_price": 0.6,
+    "output_price": 0.6,
+    "model": "mid-model",
+    "service": "sample",
+    "api_endpoint": "http://localhost:11434/v1"
+  },
+  "large-model": {
+    "size": "180B",
+    "feature": "Synthetic large-model used only by the sample dataset.",
+    "input_price": 2.5,
+    "output_price": 2.5,
+    "model": "large-model",
+    "service": "sample",
+    "api_endpoint": "http://localhost:11434/v1"
+  }
+}

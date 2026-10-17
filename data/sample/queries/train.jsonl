@@ -1,0 +1,76 @@
+{"task_name": "math", "query": "Prove that the sum of the first 5 odd numbers is a perfect square, using induction."}
+{"task_name": "qa", "query": "Compare the economic causes of the 1929 crash and the 2008 crisis, and argue which was more preventable."}
+{"task_name": "code", "query": "Implement an LRU cache with O(1) get and put for capacity 17 in Python and analyse its complexity."}
+{"task_name": "qa", "query": "What is the capital of Norway?"}
+{"task_name": "math", "query": "What is 37 plus 10?"}
+{"task_name": "qa", "query": "What is the capital of Poland?"}
+{"task_name": "qa", "query": "Name the official language of Peru."}
+{"task_name": "qa", "query": "What is the capital of Canada?"}
+{"task_name": "qa", "query": "Explain how Japan's political history shaped its present trade policy, citing at least three events."}
+{"task_name": "math", "query": "Round 21.35 to the nearest whole number."}
+{"task_name": "code", "query": "Write a function that finds the longest palindromic substring of a 6-character string in O(n^2) and discuss a faster alternative."}
+{"task_name": "code", "query": "Write a Python expression that reverses the string 'gateway'."}
+{"task_name": "code", "query": "Write a function that finds the longest palindromic substring of a 24-character string in O(n^2) and discuss a faster alternative."}
+{"task_name": "math", "query": "What is 32 times 6?"}
+{"task_name": "code", "query": "Write a function that finds the longest palindromic substring of a 26-character string in O(n^2) and discuss a faster alternative."}
+{"task_name": "math", "query": "A bag holds 9 red and 33 blue marbles. Derive the probability of drawing exactly two red in three draws without replacement."}
+{"task_name": "math", "query": "A bag holds 17 red and 27 blue marbles. Derive the probability of drawing exactly two red in three draws without replacement."}
+{"task_name": "math", "query": "What is 27 times 37?"}
+{"task_name": "qa", "query": "Explain how Canada's political history shaped its present trade policy, citing at least three events."}
+{"task_name": "math", "query": "What is 11 plus 16?"}
+{"task_name": "qa", "query": "Explain how Kenya's political history shaped its present trade policy, citing at least three events."}
+{"task_name": "qa", "query": "Evaluate the trade-offs between nuclear and solar power for a country like Canada over a thirty-year horizon."}
+{"task_name": "code", "query": "What does len('gateway') return in Python?"}
+{"task_name": "code", "query": "Write a Python expression that reverses the string 'router'."}
+{"task_name": "math", "query": "Round 11.36 to the nearest whole number."}
+{"task_name": "math", "query": "What is 26 plus 11?"}
+{"task_name": "code", "query": "Implement an LRU cache with O(1) get and put for capacity 9 in Python and analyse its complexity."}
+{"task_name": "code", "query": "Implement an LRU cache with O(1) get and put for capacity 11 in Python and analyse its complexity."}
+{"task_name": "qa", "query": "Name the official language of Chile."}
+{"task_name": "qa", "query": "What is the capital of Japan?"}
+{"task_name": "code", "query": "Write a function that finds the longest palindromic substring of a 3-character string in O(n^2) and discuss a faster alternative."}
+{"task_name": "math", "query": "A bag holds 40 red and 24 blue marbles. Derive the probability of drawing exactly two red in three draws without replacement."}
+{"task_name": "math", "query": "Solve 8x^2 + 16x - 8 = 0 and justify each algebraic step, including the discriminant."}
+{"task_name": "math", "query": "Prove that the sum of the first 2 odd numbers is a perfect square, using induction."}
+{"task_name": "code", "query": "What does len('meadow') return in Python?"}
+{"task_name": "math", "query": "A bag holds 27 red and 31 blue marbles. Derive the probability of drawing exactly two red in three draws without replacement."}
+{"task_name": "math", "query": "What is 3 plus 11?"}
+{"task_name": "qa", "query": "Name the official language of Kenya."}
+{"task_name": "math", "query": "Round 8.35 to the nearest whole number."}
+{"task_name": "math", "query": "What is 18 plus 15?"}
+{"task_name": "code", "query": "Write a function that finds the longest palindromic substring of a 28-character string in O(n^2) and discuss a faster alternative."}
+{"task_name": "qa", "query": "Evaluate the trade-offs between nuclear and solar power for a country like Poland over a thirty-year horizon."}
+{"task_name": "math", "query": "What is 32 plus 9?"}
+{"task_name": "qa", "query": "Evaluate the trade-offs between nuclear and solar power for a country like India over a thirty-year horizon."}
+{"task_name": "math", "query": "What is 19 plus 4?"}
+{"task_name": "math", "query": "What is 22 times 34?"}
+{"task_name": "code", "query": "Write a function that finds the longest palindromic substring of a 36-character string in O(n^2) and discuss a faster alternative."}
+{"task_name": "code", "query": "Design a thread-safe rate limiter for 6 requests per second and explain the race conditions you avoid."}
+{"task_name": "qa", "query": "In which continent is Egypt?"}
+{"task_name": "math", "query": "Prove that the sum of the first 16 odd numbers is a perfect square, using induction."}
+{"task_name": "code", "query": "Implement an LRU cache with O(1) get and put for capacity 24 in Python and analyse its complexity."}
+{"task_name": "qa", "query": "Evaluate the trade-offs between nuclear and solar power for a country like Peru over a thirty-year horizon."}
+{"task_name": "math", "query": "What is 18 plus 19?"}
+{"task_name": "math", "query": "Prove that the sum of the first 18 odd numbers is a perfect square, using induction."}
+{"task_name": "math", "query": "A bag holds 7 red and 18 blue marbles. Derive the probability of drawing exactly two red in three draws without replacement."}
+{"task_name": "code", "query": "Write a Python expression that reverses the string 'meadow'."}
+{"task_name": "code", "query": "Write a Python expression that reverses the string 'harbor'."}
+{"task_name": "code", "query": "How do I print 'cipher' in Python?"}
+{"task_name": "code", "query": "Write a Python expression that reverses the string 'orbit'."}
+{"task_name": "math", "query": "Prove that the sum of the first 8 odd numbers is a perfect square, using induction."}
+{"task_name": "code", "query": "Implement an LRU cache with O(1) get and put for capacity 10 in Python and analyse its complexity."}
+{"task_name": "math", "query": "Solve 7x^2 + 26x - 7 = 0 and justify each algebraic step, including the discriminant."}
+{"task_name": "qa", "query": "In which continent is Kenya?"}
+{"task_name": "code", "query": "Implement an LRU cache with O(1) get and put for capacity 18 in Python and analyse its complexity."}
+{"task_name": "math", "query": "What is 15 times 24?"}
+{"task_name": "code", "query": "Implement an LRU cache with O(1) get and put for capacity 32 in Python and analyse its complexity."}
+{"task_name": "qa", "query": "What is the capital of Peru?"}
+{"task_name": "math", "query": "Round 35.11 to the nearest whole number."}
+{"task_name": "qa", "query": "Explain how Vietnam's political history shaped its present trade policy, citing at least three events."}
+{"task_name": "math", "query": "What is 4 plus 10?"}
+{"task_name": "code", "query": "Write a function that finds the longest palindromic substring of a 5-character string in O(n^2) and discuss a faster alternative."}
+{"task_name": "code", "query": "Implement an LRU cache with O(1) get and put for capacity 31 in Python and analyse its complexity."}
+{"task_name": "qa", "query": "What is the capital of India?"}
+{"task_name": "code", "query": "What does len('orbit') return in Python?"}
+{"task_name": "qa", "query": "What is the capital of Chile?"}
+{"task_name": "code", "query": "Write a function that finds the longest palindromic substring of a 35-character string in O(n^2) and discuss a faster alternative."}

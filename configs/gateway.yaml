@@ -1,0 +1,30 @@
+# Gateway app mounted under /v1. Backends here point at a local
+# OpenAI-compatible server (for example Ollama) and need no API key.
+serve:
+  host: 0.0.0.0
+  port: 8080
+  show_model_prefix: true
+
+router:
+  strategy: random
+  weights:
+    small-model: 3
+    large-model: 1
+
+llms:
+  small-model:
+    provider: local
+    model: small-model
+    base_url: http://localhost:11434/v1
+    local: true
+    description: Small, cheap model for simple prompts.
+    input_price: 0.1
+    output_price: 0.1
+  large-model:
+    provider: local
+    model: large-model
+    base_url: http://localhost:11434/v1
+    local: true
+    description: Large model for hard prompts.
+    input_price: 2.5
+    output_price: 2.5
